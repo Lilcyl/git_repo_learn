@@ -107,12 +107,41 @@ Selecting option `5` exits the application.
 Exiting...
 ```
 
+## Functions
+
+### `add_task()`
+
+The `add_task()` function asks the user to enter a task and adds it to the task list.
+
+Each new task is initially given a status of `False`, meaning it has not been completed.
+
+```python
+def add_task():
+    taskname = input("Enter task: ")
+    a = {taskname: False}
+    tasklist.append(a)
+```
 
 ### `view_tasks()`
 
-This function checks whether there are any tasks and displays them.
+The `view_tasks()` function checks whether the task list contains any tasks.
 
+If the list is empty, it displays:
 
+```text
+No tasks found.
+```
+
+Otherwise, it loops through the task list and displays each task.
+
+```python
+def view_tasks():
+    if len(tasklist) == 0:
+        print("No tasks found.")
+    else:
+        for i, task in enumerate(tasklist, start=1):
+            print(f"{i}. {task}")
+```
 
 ## Technologies Used
 
@@ -155,7 +184,7 @@ task_assistant.py
 
 2. Open a terminal in the folder containing the file.
 
-3. Run:
+3. Run the program:
 
 ```bash
 python task_assistant.py
@@ -192,5 +221,44 @@ Task Complete Python assignment completed successfully
 
 Enter your choice: 4
 
-Tot
+Total Task: 1
+Completed Task: 1
+Pending: 0
+
+Enter your choice: 5
+
+Exiting...
 ```
+
+## Learning Objectives
+
+This project demonstrates several beginner Python concepts:
+
+* Creating and using variables
+* Working with lists
+* Working with dictionaries
+* Creating and using functions
+* Using `if`, `elif`, and `else`
+* Using `for` and `while` loops
+* Using Boolean values (`True` and `False`)
+* Getting input from a user
+* Building an interactive command-line application
+
+## Future Improvements
+
+Possible improvements to the application include:
+
+* Delete a task
+* Edit a task
+* Display completed and pending tasks separately
+* Give each task a unique ID
+* Add task priorities such as High, Medium, and Low
+* Add due dates
+* Save tasks to a file
+* Store tasks in an SQLite database
+* Add error handling for invalid menu input
+* Prevent duplicate task names
+
+## Author
+
+Created as a beginner Python command-line project to practise lists, dictionaries, functions, loops, conditions, and user input.
