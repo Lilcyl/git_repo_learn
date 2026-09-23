@@ -1,0 +1,2 @@
+user = Cyl
+print(user)
